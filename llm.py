@@ -2,9 +2,12 @@
 import os
 from openai import OpenAI
 import streamlit as st
-api_key = st.secrets.get("OPENAI_API_KEY") if hasattr(st, "secrets") else os.getenv("OPENAI_API_KEY")
-client = OpenAI(api_key=api_key)
-
+def get_api_key():
+    try:
+        return st.secrets["OPENAI_API_KEY"]
+    except:
+        return os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=get_api_key())
 def generate_recommendation_explanation(
     user_mood: str,
     movies: list[dict]
