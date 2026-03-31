@@ -2,7 +2,7 @@ import os
 import json
 import chromadb
 import streamlit as st
-import google.generativeai as genai
+from google import genai
 
 def get_api_key():
     try:
@@ -22,13 +22,12 @@ def get_or_create_collection():
     )
 
 def embed_text(text: str) -> list:
-    # Configure INSIDE the function, not at module level
-    genai.configure(api_key=get_api_key())
-    result = genai.embed_content(
-        model="models/embedding-001",
-        content=text
+    client = genai.Client(api_key=get_api_key())
+    result = client.models.embed_content(
+        model="gemini-embedding-001",
+        contents=text
     )
-    return result["embedding"]
+    return result.embeddings[0].values
 
 def ingest_movies(movies_path: str = "data/movies.json"):
     collection = get_or_create_collection()

@@ -1,6 +1,6 @@
 import os
 import streamlit as st
-import google.generativeai as genai
+from google import genai
 
 def get_api_key():
     try:
@@ -12,8 +12,7 @@ def get_api_key():
     return os.getenv("GEMINI_API_KEY")
 
 def generate_recommendation_explanation(user_mood: str, movies: list) -> str:
-    # Configure INSIDE the function
-    genai.configure(api_key=get_api_key())
+    client = genai.Client(api_key=get_api_key())
 
     movies_context = ""
     for i, movie in enumerate(movies, 1):
@@ -41,6 +40,8 @@ Rules:
 - Format with the movie title as a header for each section
 - Do NOT suggest movies outside the ones provided"""
 
-    model = genai.GenerativeModel("gemini-1.5-flash")
-    response = model.generate_content(prompt)
+    response = client.models.generate_content(
+        model="gemini-2.0-flash",
+        contents=prompt
+    )
     return response.text
