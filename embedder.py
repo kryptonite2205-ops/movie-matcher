@@ -2,18 +2,19 @@ import os
 import json
 import chromadb
 import streamlit as st
-from openai import OpenAI
+import google.generativeai as genai
 
 def get_api_key():
     try:
-        key = st.secrets["OPENAI_API_KEY"]
+        key = st.secrets["GEMINI_API_KEY"]
         if key:
             return key
     except Exception:
         pass
-    return os.getenv("OPENAI_API_KEY")
+    return os.getenv("GEMINI_API_KEY")
 
-client = OpenAI(api_key=get_api_key())
+# Configure Gemini
+genai.configure(api_key=get_api_key())
 chroma_client = chromadb.EphemeralClient()
 
 
@@ -25,24 +26,21 @@ def get_or_create_collection():
 
 
 def embed_text(text: str) -> list:
-    response = client.embeddings.create(
-        input=text,
-        model="text-embedding-3-small"
+    result = genai.embed_content(
+        model="models/text-embedding-004",
+        content=text
     )
-    return response.data[0].embedding
+    return result["embedding"]
 
 
 def ingest_movies(movies_path: str = "data/movies.json"):
     collection = get_or_create_collection()
 
     if collection.count() > 0:
-        print(f"Collection already has {collection.count()} movies. Skipping ingestion.")
         return collection
 
     with open(movies_path, "r") as f:
         movies = json.load(f)
-
-    print(f"Ingesting {len(movies)} movies into ChromaDB...")
 
     ids = []
     embeddings = []
@@ -50,9 +48,7 @@ def ingest_movies(movies_path: str = "data/movies.json"):
     metadatas = []
 
     for movie in movies:
-        print(f"  Embedding: {movie['title']}...")
         embedding = embed_text(movie["vibe_description"])
-
         ids.append(movie["id"])
         embeddings.append(embedding)
         documents.append(movie["vibe_description"])
@@ -71,7 +67,6 @@ def ingest_movies(movies_path: str = "data/movies.json"):
         metadatas=metadatas
     )
 
-    print(f"Successfully ingested {len(movies)} movies!")
     return collection
 
 
