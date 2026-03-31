@@ -27,7 +27,7 @@ def get_or_create_collection():
 
 def embed_text(text: str) -> list:
     result = genai.embed_content(
-        model="models/text-embedding-004",
+        model="models/text-embedding-001",
         content=text
     )
     return result["embedding"]
