@@ -42,6 +42,15 @@ and I'll find exactly the right film.*
 st.divider()
 
 # Initialize DB silently in the background
+try:
+    key = st.secrets["GEMINI_API_KEY"]
+    if key:
+        st.success(f"Key found! Starts with: {key[:8]}...")
+    else:
+        st.error("Key is empty!")
+except Exception as e:
+    st.error(f"Secret not found: {e}")
+
 with st.spinner("Loading movie database..."):
     initialize_database()
 
