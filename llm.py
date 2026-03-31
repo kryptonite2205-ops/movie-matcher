@@ -40,8 +40,12 @@ Rules:
 - Format with the movie title as a header for each section
 - Do NOT suggest movies outside the ones provided"""
 
-    response = client.models.generate_content(
-        model="gemini-1.5-flash",
-        contents=prompt
-    )
+    try:
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt
+        )
+        return response.text
+    except Exception as e:
+        return f"ERROR DETAILS: {str(e)}"
     return response.text
