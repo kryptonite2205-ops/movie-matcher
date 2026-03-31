@@ -2,7 +2,6 @@ import os
 import streamlit as st
 import google.generativeai as genai
 
-
 def get_api_key():
     try:
         key = st.secrets["GEMINI_API_KEY"]
@@ -12,11 +11,9 @@ def get_api_key():
         pass
     return os.getenv("GEMINI_API_KEY")
 
-
-genai.configure(api_key=get_api_key())
-
-
 def generate_recommendation_explanation(user_mood: str, movies: list) -> str:
+    # Configure INSIDE the function
+    genai.configure(api_key=get_api_key())
 
     movies_context = ""
     for i, movie in enumerate(movies, 1):

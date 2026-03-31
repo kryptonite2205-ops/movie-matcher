@@ -13,10 +13,7 @@ def get_api_key():
         pass
     return os.getenv("GEMINI_API_KEY")
 
-# Configure Gemini
-genai.configure(api_key=get_api_key())
 chroma_client = chromadb.EphemeralClient()
-
 
 def get_or_create_collection():
     return chroma_client.get_or_create_collection(
@@ -24,14 +21,14 @@ def get_or_create_collection():
         metadata={"hnsw:space": "cosine"}
     )
 
-
 def embed_text(text: str) -> list:
+    # Configure INSIDE the function, not at module level
+    genai.configure(api_key=get_api_key())
     result = genai.embed_content(
-        model="models/text-embedding-001",
+        model="models/embedding-001",
         content=text
     )
     return result["embedding"]
-
 
 def ingest_movies(movies_path: str = "data/movies.json"):
     collection = get_or_create_collection()
@@ -69,7 +66,6 @@ def ingest_movies(movies_path: str = "data/movies.json"):
 
     return collection
 
-
 def search_movies(query: str, n_results: int = 3) -> list:
     collection = get_or_create_collection()
     query_embedding = embed_text(query)
@@ -84,7 +80,6 @@ def search_movies(query: str, n_results: int = 3) -> list:
     for i in range(len(results["ids"][0])):
         distance = results["distances"][0][i]
         similarity = 1 - distance
-
         movies.append({
             "title": results["metadatas"][0][i]["title"],
             "year": results["metadatas"][0][i]["year"],
