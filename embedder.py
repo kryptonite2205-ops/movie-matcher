@@ -3,9 +3,10 @@ import os
 import json
 import chromadb
 from openai import OpenAI
-from dotenv import load_dotenv
 
-load_dotenv()
+import streamlit as st
+api_key = st.secrets.get("OPENAI_API_KEY") if hasattr(st, "secrets") else os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=api_key)
 
 # ============================================================
 # WHAT IS CHROMADB?
@@ -18,11 +19,11 @@ load_dotenv()
 # No Docker, no server, no cloud account needed for development.
 # ============================================================
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
 
 # PersistentClient saves the database to disk so you don't
 # have to re-embed every time you restart the app
-chroma_client = chromadb.PersistentClient(path="./chroma_db")
+chroma_client = chromadb.EphemeralClient()
 
 def get_or_create_collection():
     """

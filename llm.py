@@ -1,10 +1,9 @@
 # llm.py
 import os
 from openai import OpenAI
-from dotenv import load_dotenv
-
-load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+import streamlit as st
+api_key = st.secrets.get("OPENAI_API_KEY") if hasattr(st, "secrets") else os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=api_key)
 
 def generate_recommendation_explanation(
     user_mood: str,
