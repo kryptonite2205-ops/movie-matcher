@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1",
+    "title": "Se7en",
+    "year": 1995,
+    "genres": ["Crime", "Drama", "Mystery"],
+    "director": "David Fincher",
+    "vibe_description": "Oppressively dark and gritty crime thriller set in a perpetually rainy city. Two detectives hunt a serial killer using the seven deadly sins as his blueprint. Relentlessly bleak atmosphere, morally complex characters, and one of cinema's most devastating and shocking endings. Explores the darkest depths of human evil. Slow-burn dread that never lets up.",
+    "poster_emoji": "🔪"
+  },
+  {
+    "id": "2",
+    "title": "The Usual Suspects",
+    "year": 1995,
+    "genres": ["Crime", "Mystery", "Thriller"],
+    "director": "Bryan Singer",
+    "vibe_description": "Intricate crime mystery built entirely around a masterful twist ending. Unreliable narrator weaves a complex web of criminals, lies, and a mysterious crime lord named Keyser Söze. Clever, cerebral, rewinds in your mind after the reveal. The definition of a film you want to watch a second time immediately.",
+    "poster_emoji": "🃏"
+  },
+  {
+    "id": "3",
+    "title": "Parasite",
+    "year": 2019,
+    "genres": ["Thriller", "Drama", "Dark Comedy"],
+    "director": "Bong Joon-ho",
+    "vibe_description": "Genre-defying Korean masterpiece about class warfare and social inequality. A poor family infiltrates a wealthy household with darkly comedic precision, until things spiral into violent shocking territory. Feels like a thriller, a comedy, and a tragedy simultaneously. Profound social commentary hidden inside a gripping plot with a stunning mid-film revelation.",
+    "poster_emoji": "🪜"
+  },
+  {
+    "id": "4",
+    "title": "Eternal Sunshine of the Spotless Mind",
+    "year": 2004,
+    "genres": ["Romance", "Sci-Fi", "Drama"],
+    "director": "Michel Gondry",
+    "vibe_description": "Deeply melancholic and tender love story told in reverse through a character's memories being erased. Heartbreaking exploration of what makes relationships worth keeping even knowing they'll end in pain. Visually inventive and emotionally raw. For when you want to feel deeply sad but also hopeful about love.",
+    "poster_emoji": "💭"
+  },
+  {
+    "id": "5",
+    "title": "Blade Runner 2049",
+    "year": 2017,
+    "genres": ["Sci-Fi", "Neo-Noir", "Drama"],
+    "director": "Denis Villeneuve",
+    "vibe_description": "Visually breathtaking neo-noir science fiction with a meditative, slow pace. A replicant detective uncovers a mystery that could destabilize society. Asks profound questions about consciousness, identity, and what it means to be human. Stunning cinematography, mournful atmosphere, hauntingly beautiful. For patient viewers who want their sci-fi cerebral and emotional.",
+    "poster_emoji": "🌆"
+  },
+  {
+    "id": "6",
+    "title": "Whiplash",
+    "year": 2014,
+    "genres": ["Drama", "Music"],
+    "director": "Damien Chazelle",
+    "vibe_description": "Intensely visceral and nerve-shredding drama about obsession and the price of greatness. A jazz drummer is pushed to his psychological limits by a terrifying, abusive conductor. Feels like a thriller despite being about music school. Explores whether great art justifies suffering. Relentless, anxiety-inducing, and ultimately ambiguous about its own thesis.",
+    "poster_emoji": "🥁"
+  },
+  {
+    "id": "7",
+    "title": "Everything Everywhere All at Once",
+    "year": 2022,
+    "genres": ["Sci-Fi", "Comedy", "Action", "Drama"],
+    "director": "Daniel Kwan, Daniel Scheinert",
+    "vibe_description": "Wildly chaotic and maximally creative multiverse adventure about a middle-aged laundromat owner discovering infinite versions of herself. Somehow deeply emotional under all the absurdist comedy and kung fu fighting. About nihilism, generational trauma, and the choice to find meaning anyway. Exhausting and exhilarating in equal measure. Utterly unlike anything else.",
+    "poster_emoji": "🥯"
+  },
+  {
+    "id": "8",
+    "title": "Hereditary",
+    "year": 2018,
+    "genres": ["Horror", "Drama", "Mystery"],
+    "director": "Ari Aster",
+    "vibe_description": "Deeply unsettling slow-burn horror that functions primarily as a devastating grief drama. A family unravels after a tragedy reveals dark secrets about their lineage. More psychologically disturbing than jump-scary. Ari Aster builds dread through family dysfunction before the supernatural horror arrives. One of the most genuinely terrifying films in years.",
+    "poster_emoji": "👁️"
+  },
+  {
+    "id": "9",
+    "title": "The Grand Budapest Hotel",
+    "year": 2014,
+    "genres": ["Comedy", "Adventure", "Drama"],
+    "director": "Wes Anderson",
+    "vibe_description": "Whimsical, pastel-colored, meticulously symmetrical comedy adventure set in a fictional European hotel. Eccentric characters, rapid-fire witty dialogue, and an aesthetic so distinctive it's immediately recognizable. Warm, nostalgic, and surprisingly melancholic under the comedic surface. Perfect when you want something clever, beautiful to look at, and delightfully odd.",
+    "poster_emoji": "🏨"
+  },
+  {
+    "id": "10",
+    "title": "Oldboy",
+    "year": 2003,
+    "genres": ["Mystery", "Thriller", "Drama"],
+    "director": "Park Chan-wook",
+    "vibe_description": "Brutally violent and psychologically devastating Korean revenge thriller with one of cinema's most shocking twists. A man imprisoned for 15 years with no explanation hunts down his captors, only to discover a truth worse than captivity. Visceral action, haunting cinematography, and a finale that is genuinely unforgettable. Disturbing but masterful.",
+    "poster_emoji": "🔨"
+  },
+  {
+    "id": "11",
+    "title": "Amélie",
+    "year": 2001,
+    "genres": ["Romance", "Comedy", "Fantasy"],
+    "director": "Jean-Pierre Jeunet",
+    "vibe_description": "Enchanting and whimsical French romantic fantasy about a shy Parisian waitress who secretly orchestrates others' happiness while avoiding her own. Visually inventive, warm-hearted, and utterly charming. Feels like Paris smells on a sunny morning. Perfect comfort film for when you want to feel that the world is secretly magical and full of small wonders.",
+    "poster_emoji": "🌸"
+  },
+  {
+    "id": "12",
+    "title": "No Country for Old Men",
+    "year": 2007,
+    "genres": ["Crime", "Drama", "Thriller"],
+    "director": "Coen Brothers",
+    "vibe_description": "Bleak and philosophical neo-western crime thriller following a psychopathic hitman with a coin-flip philosophy on life and death. Sparse, methodical, deeply unsettling. Refuses to give audiences the catharsis they expect. Meditations on fate, evil, and the inexorable passage of a violent world. Anton Chigurh is cinema's most terrifying villain.",
+    "poster_emoji": "💈"
+  }
+]
